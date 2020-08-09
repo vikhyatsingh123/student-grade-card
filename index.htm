@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang=en-US>
+    <head>
+       <meta name="viewport" content="width=device-width intial scale=1.0">
+       <title>Student Grade Calcy</title>
+       <link rel="stylesheet" type="text/css" href= "../student%20grade%20card/style.css" >
+    </head>
+    <body>
+    <p id="Welc" class="strt"></p>
+      <div class="box"> 
+        <span class="sign">
+          <h1>STUDENT<br> GRADE<br> CALCY</h1>
+          
+          </span>    
+        <span class="content">
+          <input type="text" id="Maths" class="fill" placeholder="Maths"><br>
+          </span>
+            <span class="content">
+          <input type="text" id="CS" class="fill"
+                 placeholder="CS">
+          </span>
+            <span class="content">
+          <input type="text"  id="Physics" class="fill"
+                 placeholder="Physics">
+          </span>  
+          <span class="content">
+          <input type="text" id="Chemistry" class="fill"
+                 placeholder="Chemistry">
+          </span> 
+         <span class="content">
+          <input type="text" id="Electrical" class="fill"
+                 placeholder="Electrical">
+          </span>
+            <span class="content">
+          <input type="text" id="Electronics" class="fill"
+                 placeholder="Electronics">
+          </span>
+          <button type="reset" class="btn1" onclick="set()">Reset</button>
+          <button class="btn2" onclick="act()">Submit</button>
+          
+          <div class="hidden">
+          <p id="showdata"> </p>
+          </div>
+          
+          
+          
+        </div>  
+    
+    
+    
+    
+    
+    </body>
+
+</html>
+
+<script>
+    var welc= prompt("what is your name "," ");
+    document.getElementById("Welc").innerHTML="WELCOME "+welc+" !";
+        function act() {
+    var maths = document.getElementById("Maths").value;
+    var cs = document.getElementById("CS").value;
+    var physics = document.getElementById("Physics").value;
+    var chemistry = document.getElementById("Chemistry").value;
+    var electrical = document.getElementById("Electrical").value;
+    var electronics = document.getElementById("Electronics").value;
+    var total = parseFloat(maths)+ parseFloat(cs)+ parseFloat(physics)+ parseFloat(chemistry)+ parseFloat(electrical)+ parseFloat(electronics);
+    var ans = confirm("Do you want to proceed:");
+     
+   alert("Your total score is "+total);
+   
+   var perc = (total/6);
+        if(perc<30){
+      document.getElementById("showdata").innerHTML="<p style=color:red>FAIL!<p> Your percentage is "+perc +"%. Your grade is F";    
+   }
+          else if(perc>=90){
+       document.getElementById("showdata").innerHTML="<p style=color:red>PASS!<p> Your percentage is "+perc +"%. Your grade is A+";   
+   }    
+         else if(perc<90 && perc>=80){
+       document.getElementById("showdata").innerHTML="<p style=color:red>PASS!<p> Your percentage is "+perc +"%. Your grade is A";   
+   }    
+            else if(perc<80 && perc>=70){
+       document.getElementById("showdata").innerHTML="<p style=color:red>PASS!<p> Your percentage is "+perc +"%. Your grade is B+";   
+   }    
+            else if(perc<70 && perc>=60){
+       document.getElementById("showdata").innerHTML="<p style=color:red>PASS!<p> Your percentage is "+perc +"%. Your grade is B";   
+   }    
+            else if(perc<60 && perc >=50){
+       document.getElementById("showdata").innerHTML="<p style=color:red>PASS!<p> Your percentage is "+perc +"%. Your grade is C";   
+   }    
+            else if(perc<50 && perc >=40){
+       document.getElementById("showdata").innerHTML="<p style=color:red>PASS!<p> Your percentage is "+perc +"%. Your grade is D";   
+   }    
+            else if(perc<40 && perc>=30){
+       document.getElementById("showdata").innerHTML="<p style=color:red> JUST PASS!<p> Your percentage is "+perc +"%. Your grade is P";   
+   }                
+}
+function set() {
+    var maths = document.getElementById("Maths").value="";
+    var cs = document.getElementById("CS").value="";
+    var physics = document.getElementById("Physics").value="";
+    var chemistry = document.getElementById("Chemistry").value="";
+    var electrical = document.getElementById("Electrical").value="";
+    var electronics = document.getElementById("Electronics").value="";
+}
+        
+        
+        </script>
+    
